@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAFIZ ABDUL HAKIM| Cybersecurity Specialist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            dark: '#050b14',
+                            card: '#0a192f',
+                            border: '#1e3a8a',
+                            neonGreen: '#00ff66',
+                            neonBlue: '#00f3ff',
+                            neonPurple: '#bd00ff',
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['Fira Code', 'Courier New', 'monospace'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050b14;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .matrix-bg {
+            background: linear-gradient(rgba(5, 11, 20, 0.9), rgba(5, 11, 20, 0.95)), url('https://placehold.co/1920x1080/050b14/00ff66?text=') repeat;
+        }
+        .neon-glow-green {
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.7), 0 0 20px rgba(0, 255, 102, 0.5);
+        }
+        .neon-glow-blue {
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.7), 0 0 20px rgba(0, 243, 255, 0.5);
+        }
+        .box-glow-green {
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2), inset 0 0 15px rgba(0, 255, 102, 0.05);
+            border: 1px solid rgba(0, 255, 102, 0.4);
+        }
+        .box-glow-blue {
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2), inset 0 0 15px rgba(0, 243, 255, 0.05);
+            border: 1px solid rgba(0, 243, 255, 0.4);
+        }
+        .box-glow-blue:hover {
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.5), inset 0 0 20px rgba(0, 243, 255, 0.15);
+            border-color: #00f3ff;
+        }
+        .box-glow-green:hover {
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.5), inset 0 0 20px rgba(0, 255, 102, 0.15);
+            border-color: #00ff66;
+        }
+        .cursor-blink::after {
+            content: '_';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050b14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e3a8a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f3ff;
+        }
+    </style>
+</head>
+<body class="bg-cyber-dark text-slate-100 font-sans antialiased selection:bg-cyber-neonGreen selection:text-black">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-cyber-dark/9opath backdrop-blur-md border-b border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-cyber-card flex items-center justify-center box-glow-green">
+                        <i class="fa-solid fa-shield-halved text-cyber-neonGreen text-xl"></i>
+                    </div>
+                    <span class="font-mono font-bold text-lg sm:text-xl tracking-wider text-cyber-neonGreen">
+                        HAFIZ<span class="text-cyber-neonBlue">.SEC</span>
+                    </span>
+                </div>
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 font-mono text-sm">
+                    <a href="#about" class="hover:text-cyber-neonGreen transition-colors duration-300">// about</a>
+                    <a href="#skills" class="hover:text-cyber-neonGreen transition-colors duration-300">// skills</a>
+                    <a href="#portfolio" class="hover:text-cyber-neonGreen transition-colors duration-300">// portfolio</a>
+                    <a href="#certificates" class="hover:text-cyber-neonGreen transition-colors duration-300">// certificates</a>
+                    <a href="#contact" class="hover:text-cyber-neonGreen transition-colors duration-300">// contact</a>
+                </nav>
+                <!-- Terminal Status badge -->
+                <div class="hidden lg:flex items-center space-x-2 font-mono text-xs px-3 py-1.5 rounded-full bg-cyber-card border border-cyber-border text-cyber-neonGreen">
+                    <span class="w-2 h-2 rounded-full bg-cyber-neonGreen animate-ping"></span>
+                    <span>SECURE_CONN: ACTIVE</span>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-cyber-neonGreen focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cyber-card border-b border-cyber-border px-4 pt-2 pb-4 space-y-2 font-mono text-sm">
+            <a href="#about" class="block py-2 hover: text-cyber-neonGreen transition-colors">// about</a>
+            <a href="#skills" class="block py-2 hover:text-cyber-neonGreen transition-colors">// skills</a>
+            <a href="#portfolio" class="block py-2 hover:text-cyber-neonGreen transition-colors">// portfolio</a>
+            <a href="#certificates" class="block py-2 hover:text-cyber-neonGreen transition-colors">// certificates</a>
+            <a href="#contact" class="block py-2 hover:text-cyber-neonGreen transition-colors">// contact</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 pb-12 px-4 sm:px-6 lg:px-8 matrix-bg overflow-hidden">
+        <!-- Background matrix grid decoration -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#00ff66_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Left Text Content -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyber-card border border-cyber-border font-mono text-xs sm:text-sm text-cyber-neonBlue">
+                    <i class="fa-solid fa-terminal"></i>
+                    <span>ACCESS_GRANTED // ROOT_USER</span>
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+                    Hi, I'm <span class="text-cyber-neonGreen neon-glow-green">Hafiz Abdul Hakim</span>
+                </h1>
+                <div class="text-xl sm:text-2xl font-mono text-slate-300 h-16 flex items-center justify-center lg:justify-start">
+                    <span>&gt; <span id="typing-text" class="text-cyber-neonBlue neon-glow-blue font-semibold"></span><span class="cursor-blink"></span></span>
+                </div>
+                <p class="text-base sm:text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 font-sans">
+                    Berdedikasi tinggi dalam mengamankan infrastruktur digital, mendeteksi kerentanan sistem sebelum dieksploitasi, serta menjaga integritas dan kerahasiaan data perusahaan dari ancaman siber modern.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#contact" class="px-6 py-3 rounded-lg bg-cyber-neonGreen text-black font-mono font-bold tracking-wide hover:bg-emerald-400 transition-all duration-300 shadow-lg shadow-cyber-neonGreen/20 flex items-center space-x-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Hire Me</span>
+                    </a>
+                    <a href="#portfolio" class="px-6 py-3 rounded-lg bg-cyber-card border border-cyber-neonBlue text-cyber-neonBlue font-mono font-bold tracking-wide hover:bg-cyber-neonBlue/10 transition-all duration-300 flex items-center space-x-2">
+                        <i class="fa-solid fa-code"></i>
+                        <span>View Portfolio</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Avatar / Hacker Terminal Box -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="w-full max-w-md bg-cyber-card rounded-2xl p-6 box-glow-blue relative">
+                    <!-- Window Controls -->
+                    <div class="flex items-center justify-between pb-4 border-b border-cyber-border mb-4">
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                        </div>
+                        <span class="font-mono text-xs text-slate-400">hafiz@security-node:~$</span>
+                    </div>
+                    <!-- Avatar Image with glowing border -->
+                    <div class="relative w-48 h-48 sm:w-60 sm:h-60 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-cyber-neonGreen box-glow-green p-1 bg-cyber-dark group">
+                        <img src="apis.jpeg" alt="Hafiz Abdul Hakim" class="w-full h-full object-cover rounded-xl transition-all duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/400x400/050b14/00ff66?text=Hafiz+Abdul+Hakim'">
+                        <div class="absolute inset-0 bg-cyber-neonGreen/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    </div>
+                    <!-- Terminal Info Stream -->
+                    <div class="font-mono text-xs space-y-2 bg-cyber-dark p-3 rounded-lg border border-cyber-border text-slate-300">
+                        <p class="text-cyber-neonGreen"><i class="fa-solid fa-check text-xs mr-2"></i>Status: Online & Ready</p>
+                        <p class="text-slate-400"><i class="fa-solid fa-shield text-cyber-neonBlue text-xs mr-2"></i>Specialization: Offensive & Defensive Sec</p>
+                        <p class="text-slate-400"><i class="fa-solid fa-location-dot text-amber-400 text-xs mr-2"></i>Base: Jakarta, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-cyber-card/40 border-t border-b border-cyber-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <span class="font-mono text-cyber-neonGreen text-sm tracking-widest uppercase">// 01. WHO AM I</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Tentang Saya</h2>
+                <div class="w-20 h-1 bg-cyber-neonGreen mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6 font-sans text-slate-300 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Halo! Saya <strong class="text-cyber-neonGreen font-semibold">Hafiz Abdul Hakim</strong>, seorang praktisi dan <strong class="text-cyber-neonBlue font-semibold">Cybersecurity Specialist</strong> yang berfokus pada pengamanan infrastruktur teknologi informasi, pengujian penetrasi (Penetration Testing), serta analisis kerentanan sistem.
+                    </p>
+                    <p>
+                        Di era digital yang penuh dengan ancaman siber canggih, saya mendedikasikan keahlian saya untuk membantu organisasi maupun individu dalam mengidentifikasi celah keamanan sebelum disalahgunakan oleh pihak yang tidak bertanggung jawab. Pendekatan saya menggabungkan pola pikir peretas etis (<span class="text-cyber-neonGreen font-mono">ethical hacker</span>) dengan strategi mitigasi risiko yang tangguh.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4 font-mono text-sm">
+                        <div class="p-4 rounded-lg bg-cyber-card border border-cyber-border">
+                            <span class="block text-2xl font-bold text-cyber-neonGreen">3+</span>
+                            <span class="text-slate-400 text-xs">Tahun Pengalaman</span>
+                        </div>
+                        <div class="p-4 rounded-lg bg-cyber-card border border-cyber-border">
+                            <span class="block text-2xl font-bold text-cyber-neonBlue">25+</span>
+                            <span class="text-slate-400 text-xs">Proyek Audit & CTF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Terminal Box for Bio Summary -->
+                <div class="lg:col-span-6">
+                    <div class="bg-cyber-card rounded-xl p-6 box-glow-green font-mono text-sm space-y-4">
+                        <div class="flex items-center justify-between pb-3 border-b border-cyber-border text-xs text-slate-400">
+                            <span>profile_summary.sh</span>
+                            <span class="text-cyber-neonGreen">EXEC_SUCCESS</span>
+                        </div>
+                        <div class="space-y-3 text-slate-300">
+                            <p><span class="text-cyber-neonBlue">name:</span> "Hafiz Abdul Hakim"</p>
+                            <p><span class="text-cyber-neonBlue">role:</span> "Cybersecurity Specialist & Penetration Tester"</p>
+                            <p><span class="text-cyber-neonBlue">core_values:</span> ["Confidentiality", "Integrity", "Availability"]</p>
+                            <p><span class="text-cyber-neonBlue">passion:</span> "Offensive Security, Threat Intelligence, Cryptographic Protocols"</p>
+                            <p><span class="text-cyber-neonBlue">philosophy:</span> "Know the attacker, think like the defender, secure the future."</p>
+                        </div>
+                        <div class="pt-2">
+                            <div class="w-full bg-cyber-dark rounded-full h-2 overflow-hidden border border-cyber-border">
+                                <div class="bg-cyber-neonGreen h-full w-[92%] animate-pulse"></div>
+                            </div>
+                            <span class="text-xs text-slate-400 mt-1 block text-right">System Security Index: 92% Optimal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <span class="font-mono text-cyber-neonBlue text-sm tracking-widest uppercase">// 02. TECHNICAL ARSENAL</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Keahlian & Kompetensi</h2>
+                <div class="w-20 h-1 bg-cyber-neonBlue mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Skill 1 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-blue transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonBlue mb-4 border border-cyber-border group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bug text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-100">Penetration Testing</h3>
+                    <p class="text-sm text-slate-400 mb-4">Simulasi serangan terkontrol untuk menemukan kerentanan pada sistem jaringan dan aplikasi.</p>
+                    <div class="space-y-1 font-mono text-xs">
+                        <div class="flex justify-between text-slate-400"><span>Proficiency</span><span class="text-cyber-neonBlue">95%</span></div>
+                        <div class="w-full bg-cyber-dark rounded-full h-1.5"><div class="bg-cyber-neonBlue h-full rounded-full" style="width: 95%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-green transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonGreen mb-4 border border-cyber-border group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-magnifying-glass-chart text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-100">Vulnerability Assessment</h3>
+                    <p class="text-sm text-slate-400 mb-4">Pemindaian dan analisis mendalam terhadap kelemahan keamanan perangkat lunak & hardware.</p>
+                    <div class="space-y-1 font-mono text-xs">
+                        <div class="flex justify-between text-slate-400"><span>Proficiency</span><span class="text-cyber-neonGreen">90%</span></div>
+                        <div class="w-full bg-cyber-dark rounded-full h-1.5"><div class="bg-cyber-neonGreen h-full rounded-full" style="width: 90%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-blue transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonBlue mb-4 border border-cyber-border group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-network-wired text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-100">Network Security</h3>
+                    <p class="text-sm text-slate-400 mb-4">Konfigurasi firewall, IDS/IPS, VPN aman, dan pemantauan lalu lintas data jaringan.</p>
+                    <div class="space-y-1 font-mono text-xs">
+                        <div class="flex justify-between text-slate-400"><span>Proficiency</span><span class="text-cyber-neonBlue">88%</span></div>
+                        <div class="w-full bg-cyber-dark rounded-full h-1.5"><div class="bg-cyber-neonBlue h-full rounded-full" style="width: 88%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-green transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonGreen mb-4 border border-cyber-border group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-globe text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-100">Web App Security</h3>
+                    <p class="text-sm text-slate-400 mb-4">Mitigasi OWASP Top 10 (SQLi, XSS, CSRF, Broken Auth) pada aplikasi berbasis web.</p>
+                    <div class="space-y-1 font-mono text-xs">
+                        <div class="flex justify-between text-slate-400"><span>Proficiency</span><span class="text-cyber-neonGreen">92%</span></div>
+                        <div class="w-full bg-cyber-dark rounded-full h-1.5"><div class="bg-cyber-neonGreen h-full rounded-full" style="width: 92%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-green transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonGreen mb-4 border border-cyber-border group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-key text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-100">Cryptography</h3>
+                    <p class="text-sm text-slate-400 mb-4">Implementasi enkripsi data (AES, RSA, Hashing, SSL/TLS) untuk keamanan informasi.</p>
+                    <div class="space-y-1 font-mono text-xs">
+                        <div class="flex justify-between text-slate-400"><span>Proficiency</span><span class="text-cyber-neonGreen">85%</span></div>
+                        <div class="w-full bg-cyber-dark rounded-full h-1.5"><div class="bg-cyber-neonGreen h-full rounded-full" style="width: 85%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-blue transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonBlue mb-4 border border-cyber-border group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-linux text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-100">Linux Admin & Security</h3>
+                        <p class="text-sm text-slate-400 mb-4">Hardening sistem operasi Linux, manajemen permission, dan audit log keamanan.</p>
+                    <div class="space-y-1 font-mono text-xs">
+                        <div class="flex justify-between text-slate-400"><span>Proficiency</span><span class="text-cyber-neonBlue">94%</span></div>
+                        <div class="w-full bg-cyber-dark rounded-full h-1.5"><div class="bg-cyber-neonBlue h-full rounded-full" style="width: 94%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Skill 7 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-blue transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonBlue mb-4 border border-cyber-border group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-100">Incident Response</h3>
+                    <p class="text-sm text-slate-400 mb-4">Penanganan cepat, investigasi forensik digital, dan pemulihan sistem pasca serangan.</p>
+                    <div class="space-y-1 font-mono text-xs">
+                        <div class="flex justify-between text-slate-400"><span>Proficiency</span><span class="text-cyber-neonBlue">87%</span></div>
+                        <div class="w-full bg-cyber-dark rounded-full h-1.5"><div class="bg-cyber-neonBlue h-full rounded-full" style="width: 87%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Skill 8 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-green transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonGreen mb-4 border border-cyber-border group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-secret text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-100">Ethical Hacking</h3>
+                    <p class="text-sm text-slate-400 mb-4">Penggunaan teknik eksploitasi legal untuk menguji ketahanan pertahanan perusahaan.</p>
+                    <div class="space-y-1 font-mono text-xs">
+                        <div class="flex justify-between text-slate-400"><span>Proficiency</span><span class="text-cyber-neonGreen">96%</span></div>
+                        <div class="w-full bg-cyber-dark rounded-full h-1.5"><div class="bg-cyber-neonGreen h-full rounded-full" style="width: 96%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 px-4 sm:px-6 lg:px-8 bg-cyber-card/40 border-t border-b border-cyber-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <span class="font-mono text-cyber-neonGreen text-sm tracking-widest uppercase">// 03. CYBER SIMULATIONS & PROJECTS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Portofolio & Proyek</h2>
+                <div class="w-20 h-1 bg-cyber-neonGreen mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-cyber-card rounded-xl overflow-hidden box-glow-green flex flex-col justify-between group">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs px-2.5 py-1 rounded bg-cyber-dark text-cyber-neonGreen border border-cyber-border">CTF Challenge</span>
+                            <i class="fa-solid fa-flag text-cyber-neonGreen"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyber-neonGreen transition-colors">Enterprise CTF Defense & Attack Sim</h3>
+                        <p class="text-sm text-slate-400">
+                            Merancang skenario Capture The Flag (CTF) internal untuk melatih tim IT perusahaan dalam mendeteksi eksploitasi buffer overflow dan SQL Injection.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2 font-mono text-xs">
+                            <span class="px-2 py-1 rounded bg-cyber-dark text-cyber-neonBlue border border-cyber-border">Metasploit</span>
+                            <span class="px-2 py-1 rounded bg-cyber-dark text-cyber-neonBlue border border-cyber-border">Burp Suite</span>
+                            <span class="px-2 py-1 rounded bg-cyber-dark text-cyber-neonBlue border border-cyber-border">Python</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-cyber-dark/80 border-t border-cyber-border flex justify-between items-center text-xs font-mono">
+                        <span class="text-slate-400">Status: Completed</span>
+                        <a href="#contact" class="text-cyber-neonGreen hover:underline flex items-center space-x-1"><span>Details</span><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-cyber-card rounded-xl overflow-hidden box-glow-blue flex flex-col justify-between group">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs px-2.5 py-1 rounded bg-cyber-dark text-cyber-neonBlue border border-cyber-border">Network Deployment</span>
+                            <i class="fa-solid fa-shield-cat text-cyber-neonBlue"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyber-neonBlue transition-colors">Secure Zero-Trust Network Deployment</h3>
+                        <p class="text-sm text-slate-400">
+                            Implementasi arsitektur jaringan Zero-Trust untuk klien korporat finansial, mengisolasi subnet sensitif dan membatasi akses lateral penyerang.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2 font-mono text-xs">
+                            <span class="px-2 py-1 rounded bg-cyber-dark text-cyber-neonGreen border border-cyber-border">WireGuard</span>
+                            <span class="px-2 py-1 rounded bg-cyber-dark text-cyber-neonGreen border border-cyber-border">iptables</span>
+                            <span class="px-2 py-1 rounded bg-cyber-dark text-cyber-neonGreen border border-cyber-border">Snort IDS</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-cyber-dark/80 border-t border-cyber-border flex justify-between items-center text-xs font-mono">
+                        <span class="text-slate-400">Status: Deployed</span>
+                        <a href="#contact" class="text-cyber-neonBlue hover:underline flex items-center space-x-1"><span>Details</span><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-cyber-card rounded-xl overflow-hidden box-glow-green flex flex-col justify-between group">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs px-2.5 py-1 rounded bg-cyber-dark text-cyber-neonGreen border border-cyber-border">Security Audit</span>
+                            <i class="fa-solid fa-file-shield text-cyber-neonGreen"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyber-neonGreen transition-colors">Web App Vulnerability & Patch Audit</h3>
+                        <p class="text-sm text-slate-400">
+                            Melakukan audit keamanan komprehensif pada portal e-commerce nasional, menemukan 14 critical bugs, dan memberikan rekomendasi patch.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2 font-mono text-xs">
+                            <span class="px-2 py-1 rounded bg-cyber-dark text-cyber-neonBlue border border-cyber-border">OWASP ZAP</span>
+                            <span class="px-2 py-1 rounded bg-cyber-dark text-cyber-neonBlue border border-cyber-border">Nmap</span>
+                            <span class="px-2 py-1 rounded bg-cyber-dark text-cyber-neonBlue border border-cyber-border">WAF</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-cyber-dark/80 border-t border-cyber-border flex justify-between items-center text-xs font-mono">
+                        <span class="text-slate-400">Status: Patched & Verified</span>
+                        <a href="#contact" class="text-cyber-neonGreen hover:underline flex items-center space-x-1"><span>Details</span><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <span class="font-mono text-cyber-neonBlue text-sm tracking-widest uppercase">// 04. CREDENTIALS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Sertifikasi & Pencapaian</h2>
+                <div class="w-20 h-1 bg-cyber-neonBlue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cert 1 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-blue space-y-4">
+                    <div class="flex items-center justify-between">
+                        <i class="fa-solid fa-certificate text-2xl text-cyber-neonBlue"></i>
+                        <span class="font-mono text-xs text-cyber-neonBlue bg-cyber-dark px-2 py-1 rounded border border-cyber-border">Verified</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-100">Certified Ethical Hacker (CEH)</h3>
+                    <p class="text-xs text-slate-400">EC-Council • Advanced Penetration Testing Methodologies & Attack Vectors.</p>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-green space-y-4">
+                    <div class="flex items-center justify-between">
+                        <i class="fa-solid fa-award text-2xl text-cyber-neonGreen"></i>
+                        <span class="font-mono text-xs text-cyber-neonGreen bg-cyber-dark px-2 py-1 rounded border border-cyber-border">Verified</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-100">CompTIA Security+</h3>
+                    <p class="text-xs text-slate-400">CompTIA • Core Network Security, Threat Management, and Cryptography.</p>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-blue space-y-4">
+                    <div class="flex items-center justify-between">
+                        <i class="fa-solid fa-shield-dog text-2xl text-cyber-neonBlue"></i>
+                        <span class="font-mono text-xs text-cyber-neonBlue bg-cyber-dark px-2 py-1 rounded border border-cyber-border">Verified</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-100">Offensive Security Certified (OSCP)</h3>
+                    <p class="text-xs text-slate-400">OffSec • Practical Hands-on Penetration Testing in Simulated Labs.</p>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="bg-cyber-card p-6 rounded-xl box-glow-green space-y-4">
+                    <div class="flex items-center justify-between">
+                        <i class="fa-solid fa-trophy text-2xl text-cyber-neonGreen"></i>
+                        <span class="font-mono text-xs text-cyber-neonGreen bg-cyber-dark px-2 py-1 rounded border border-cyber-border">Winner</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-100">National CTF Competition 1st Place</h3>
+                    <p class="text-xs text-slate-400">Cyber Defense ID • Juara 1 Kompetisi Keamanan Siber Nasional kategori Reverse Engineering.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-cyber-card/40 border-t border-cyber-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <span class="font-mono text-cyber-neonGreen text-sm tracking-widest uppercase">// 05. ESTABLISH CONNECTION</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Hubungi Saya</h2>
+                <div class="w-20 h-1 bg-cyber-neonGreen mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left Info & Social Links -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-cyber-card p-8 rounded-xl box-glow-green space-y-6">
+                        <h3 class="text-xl font-bold text-slate-100 font-mono">&gt; contact_channels.json</h3>
+                        <p class="text-sm text-slate-400">
+                            Tertarik berdiskusi seputar keamanan siber, kolaborasi proyek audit, atau membutuhkan jasa penetration testing? Silakan hubungi saya melalui saluran di bawah ini.
+                        </p>
+                        
+                        <div class="space-y-4 font-mono text-sm">
+                            <div class="flex items-center space-x-4 text-slate-300">
+                                <div class="w-10 h-10 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonGreen border border-cyber-border">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Email</span>
+                                    <a href="mailto:hafiz.abdul@security-node.id" class="hover:text-cyber-neonGreen transition-colors">hafiz.abdul@security-node.id</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4 text-slate-300">
+                                <div class="w-10 h-10 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonBlue border border-cyber-border">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">LinkedIn</span>
+                                    <a href="https://linkedin.com" target="_blank" class="hover:text-cyber-neonBlue transition-colors">linkedin.com/in/hafiz-abdul-hakim</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4 text-slate-300">
+                                <div class="w-10 h-10 rounded-lg bg-cyber-dark flex items-center justify-center text-cyber-neonGreen border border-cyber-border">
+                                    <i class="fa-brands fa-github"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">GitHub</span>
+                                    <a href="https://github.com" target="_blank" class="hover:text-cyber-neonGreen transition-colors">github.com/hafiz-abdulhakim</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Contact Form -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="bg-cyber-card p-8 rounded-xl box-glow-blue space-y-6">
+                        <div class="flex items-center justify-between pb-3 border-b border-cyber-border font-mono text-xs text-slate-400">
+                            <span>secure_message_sender.sh</span>
+                            <span class="text-cyber-neonBlue">ENCRYPTED</span>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block font-mono text-xs text-slate-300">// Your Name</label>
+                                <input type="text" id="sender-name" required class="w-full bg-cyber-dark border border-cyber-border rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyber-neonGreen transition-colors font-sans text-sm" placeholder="John Doe">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block font-mono text-xs text-slate-300">// Your Email</label>
+                                <input type="email" id="sender-email" required class="w-full bg-cyber-dark border border-cyber-border rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyber-neonGreen transition-colors font-sans text-sm" placeholder="john@company.com">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block font-mono text-xs text-slate-300">// Message Subject</label>
+                            <input type="text" id="sender-subject" required class="w-full bg-cyber-dark border border-cyber-border rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyber-neonGreen transition-colors font-sans text-sm" placeholder="Penetration Testing Inquiry">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block font-mono text-xs text-slate-300">// Message Content</label>
+                            <textarea id="sender-message" rows="4" required class="w-full bg-cyber-dark border border-cyber-border rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyber-neonGreen transition-colors font-sans text-sm" placeholder="Write your secure message here..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 rounded-lg bg-cyber-neonBlue text-black font-mono font-bold tracking-wider hover:bg-cyan-400 transition-colors shadow-lg shadow-cyber-neonBlue/20 flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-terminal"></i>
+                            <span>Transmit Message</span>
+                        </button>
+                        
+                        <div id="form-feedback" class="hidden font-mono text-xs text-center text-cyber-neonGreen p-2 rounded bg-cyber-dark border border-cyber-neonGreen">
+                            <i class="fa-solid fa-circle-check mr-1"></i> Transmisi berhasil! Pesan Anda telah dienkripsi dan dikirim ke Hafiz.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-cyber-border bg-cyber-dark text-center font-mono text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p>&copy; 2026 Hafiz Abdul Hakim. All Rights Reserved. // Secured & Encrypted.</p>
+            <p class="text-cyber-neonGreen">ACCESS_TERMINATED_SAFELY</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Typing Effect for Hero Section
+        const words = [
+            "Cybersecurity Specialist",
+            "Penetration Tester",
+            "Security Analyst",
+            "Ethical Hacker"
+        ];
+        let i = 0;
+        let timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typing-text').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000);
+                    return false;
+                }
+                timer = setTimeout(loopTyping, 100);
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typing-text').innerHTML = word.join("");
+                } else {
+                    if (words.length > (i + 1)) {
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+                    setTimeout(typingEffect, 500);
+                    return false;
+                }
+                timer = setTimeout(loopDeleting, 50);
+            };
+            loopDeleting();
+        }
+
+        typingEffect();
+
+        // Contact Form Submission Handler (No alert() used as per instructions)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const feedback = document.getElementById('form-feedback');
+            feedback.classList.remove('hidden');
+            
+            // Reset form fields
+            document.getElementById('sender-name').value = '';
+            document.getElementById('sender-email').value = '';
+            document.getElementById('sender-subject').value = '';
+            document.getElementById('sender-message').value = '';
+
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
